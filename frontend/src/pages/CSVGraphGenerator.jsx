@@ -72,7 +72,7 @@ const CSVGraphGenerator = () => {
       const formData = new FormData()
       formData.append("file", file)
 
-      const response = await fetch("/upload/", {
+      const response = await fetch("http://localhost:8000/upload/", {
         method: "POST",
         body: formData,
       })
@@ -103,11 +103,11 @@ const CSVGraphGenerator = () => {
     try {
       const formData = new FormData()
       formData.append("file", file)
-      formData.append("from_column", fromColumn)
-      formData.append("to_column", toColumn)
-      formData.append("amount_column", amountColumn)
+      formData.append("from_col", fromColumn)
+      formData.append("to_col", toColumn)
+      formData.append("amount_col", amountColumn)
 
-      const response = await fetch("/generate-graph/", {
+      const response = await fetch("http://localhost:8000/generate-graph/", {
         method: "POST",
         body: formData,
       })
